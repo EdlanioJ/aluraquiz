@@ -1,6 +1,6 @@
 import 'styled-components';
 
-import { theme } from '../db.json';
+import { theme } from '../../db.json';
 
 export type Theme = typeof theme;
 
