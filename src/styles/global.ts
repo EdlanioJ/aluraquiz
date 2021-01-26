@@ -21,6 +21,10 @@ export const GlobalStyles = createGlobalStyle`
     min-height: 100vh;
   }
 
+  body, input, button {
+    font: 600 18px Nunito, sans-serif;
+  }
+  
   #__next {
     flex: 1;
     display: flex;
