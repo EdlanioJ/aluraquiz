@@ -1,12 +1,12 @@
 import styled from 'styled-components';
+import React, { FormEvent, useEffect, useState } from 'react';
+import axios from 'axios';
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
 import Footer from '../src/components/Footer';
 import GitHubCorner from '../src/components/GitHubCorner';
 import { Repository } from './api/related';
-import { FormEvent, useEffect, useState } from 'react';
-import axios from 'axios';
 
 export const QuizContainer = styled.div`
   width: 100%;
@@ -31,7 +31,7 @@ export default function Home() {
     const result: Repository[] = [];
 
     while (result.length < 3) {
-      let temp = data[Math.floor(Math.random() * data.length)];
+      const temp = data[Math.floor(Math.random() * data.length)];
 
       result.push(temp);
     }
@@ -87,15 +87,13 @@ export default function Home() {
               React fez:
             </p>
             <ul>
-              {repositories.map((repo) => {
-                return (
-                  <li key={repo.id}>
-                    <a href={repo.url} target="_blank">
-                      <span>{repo.fullName}</span>
-                    </a>
-                  </li>
-                );
-              })}
+              {repositories.map((repo) => (
+                <li key={repo.id}>
+                  <a href={repo.url} rel="noreferrer" target="_blank">
+                    <span>{repo.fullName}</span>
+                  </a>
+                </li>
+              ))}
             </ul>
           </Widget.Content>
         </Widget>
