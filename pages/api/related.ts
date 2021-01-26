@@ -19,7 +19,7 @@ export interface Repository {
   url: string;
 }
 
-async function related(request: NextApiRequest, response: NextApiResponse) {
+async function related(_: NextApiRequest, response: NextApiResponse) {
   const repositoriesResponse = await axios.get<ResponseJSON>(
     'https://api.github.com/search/repositories?q=topic:aluraquiz&per_page=300'
   );
