@@ -10,6 +10,10 @@ const FooterWrapper = styled.footer`
     width: 58px;
     margin-right: 23px;
   }
+  p {
+    font-weight: 400;
+    font-size: 14px;
+  }
   a {
     color: white;
     text-decoration: none;
@@ -18,6 +22,7 @@ const FooterWrapper = styled.footer`
     &:focus {
       opacity: 0.5;
     }
+
     span {
       text-decoration: underline;
     }
