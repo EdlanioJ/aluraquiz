@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 import React, { FormEvent, useEffect, useState } from 'react';
 import axios from 'axios';
+import { useRouter } from 'next/router';
+
 import db from '../db.json';
 import Widget from '../src/components/Widget';
 import QuizBackground from '../src/components/QuizBackground';
@@ -21,8 +23,8 @@ export const QuizContainer = styled.div`
 
 export default function Home() {
   const [name, setName] = useState('');
-  const [disabled, setDisabled] = useState(true);
   const [repositories, setRepositories] = useState<Repository[]>([]);
+  const router = useRouter();
 
   async function handleAddRepo() {
     const response = await axios.get<Repository[]>('/api/related');
@@ -42,16 +44,11 @@ export default function Home() {
   useEffect(() => {
     handleAddRepo();
   }, []);
-  useEffect(() => {
-    if (name === '') {
-      setDisabled(true);
-    } else {
-      setDisabled(false);
-    }
-  }, [name]);
 
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
+
+    router.push(`/quiz?name=${name}`);
   }
   return (
     <QuizBackground backgroundImage={db.bg}>
@@ -72,7 +69,7 @@ export default function Home() {
                 required
                 placeholder="Diz aí seu nome pra jogar :)"
               />
-              <button type="submit" disabled={disabled}>
+              <button type="submit" disabled={name.length === 0}>
                 <span>Jogar</span>
               </button>
             </form>
@@ -99,7 +96,7 @@ export default function Home() {
         </Widget>
         <Footer />
       </QuizContainer>
-      <GitHubCorner projectUrl="https://github.com/edlanioj" />
+      <GitHubCorner projectUrl="https://github.com/EdlanioJ/aluraquiz" />
     </QuizBackground>
   );
 }
