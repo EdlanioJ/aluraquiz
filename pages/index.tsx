@@ -90,7 +90,7 @@ export default function Home() {
               {repositories.map((repo) => {
                 return (
                   <li key={repo.id}>
-                    <a href={repo.url}>
+                    <a href={repo.url} target="_blank">
                       <span>{repo.fullName}</span>
                     </a>
                   </li>
