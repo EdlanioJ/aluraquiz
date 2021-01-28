@@ -39,6 +39,7 @@
                 "tsx": "never"
             }
         ],
+        "react/require-default-props": "off",
         "react/jsx-filename-extension": [
             "error",
             {
