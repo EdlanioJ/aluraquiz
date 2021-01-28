@@ -1,24 +1,21 @@
 {
-  "bg": "https://i2.wp.com/css-tricks.com/wp-content/uploads/2017/06/css-is-awesome-scaled.jpg?resize=1536%2C1208&ssl=1",
-  "title": "Quiz CSS da Alura",
-  "description": "Teste os seus conhecimentos sobre CSS e vamos ver quantos layouts você vai deixar de quebrar",
+  "bg": "https://1.bp.blogspot.com/-WsNSf6jZvS0/XM3YV3O4ZDI/AAAAAAAACJ8/A7K0sxMcw_gb82SO9p7JYoAW9tPIIWxRQCKgBGAs/w1600-h900-c/john-wick-3-keanu-reeves-uhdpaper.com-4K-23.jpg",
+  "title": "Quiz de John Wick",
+  "description": "John Wick é uma franquia de thriller de ação neo-noir e que já está nos nossos corações, não só por ser protagonizado por Keanu Reeves o imortal que aprendemos a amar 😁 mas por nos tazer grandes cenas de ação e um universo incrível. Vamos testar seu conhecimentos nesta emocionate franquia",
   "questions": [
     {
-      "image": "https://media.giphy.com/media/xUOxf3yDKCuwpOlT3i/giphy.gif",
-      "title": "Como fazer um seletor por id via CSS?",
+      "image": "https://64.media.tumblr.com/211cc04648b54f00502063d9c8127350/tumblr_ney89p515z1s4xk33o2_500.gifv",
+      "title": "Qual é o nome do cachorro que Helen deu a John Wick depois de morrer?",
       "description": "Essa é pra aquecer",
       "answer": 2,
-      "alternatives": [".elemento", "*elemento", "#elemento", "%elemento"]
+      "alternatives": ["Não tem Nome", "Bob", "Daisy", "Rose"]
     },
     {
-      "image": "https://media.giphy.com/media/13FrpeVH09Zrb2/giphy.gif",
-      "title": "Como fazer um background gradiente com css?",
+      "image": "https://media1.giphy.com/media/3o6wrmUCx5jyih8gtG/giphy.gif",
+      "title": "John Wick é conhecido por um nome monstruoso. Qual é?",
       "description": "Faz tempo em haha",
       "answer": 0,
-      "alternatives": [
-        "background: linear-gradient(#e66465, #9198e5);",
-        "background: gradient(#e66465, #9198e5);"
-      ]
+      "alternatives": ["Baba Yaga", "O Fantasma", "O Terminador"]
     }
   ],
   "external": [""],
