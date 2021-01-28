@@ -21,50 +21,6 @@ const Widget: any = styled.div`
     font-weight: 400;
     line-height: 1;
   }
-  form {
-    display: flex;
-    flex: 1;
-    flex-direction: column;
-    margin: 32px 0;
-
-    input {
-      margin-bottom: 25px;
-      height: 38px;
-      border-radius: ${({ theme }) => theme.borderRadius};
-      background-color: ${({ theme }) => theme.colors.mainBg};
-      border: 1px solid #3f51b5;
-      outline: none;
-      padding: 0 16px;
-
-      color: ${({ theme }) => theme.colors.contrastText};
-      font-size: 14px;
-      font-weight: 400;
-      line-height: 24px;
-    }
-
-    button {
-      height: 38px;
-      outline: none;
-      border: 1px solid #3f51b5;
-      border-radius: ${({ theme }) => theme.borderRadius};
-      background-color: #979797;
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.12),
-        0px 2px 2px rgba(0, 0, 0, 0.24);
-
-      span {
-        font-size: 14px;
-        font-weight: 700;
-        line-height: 16px;
-        text-transform: uppercase;
-        color: #ffffff;
-      }
-
-      :enabled {
-        background-color: #e91e63;
-        cursor: pointer;
-      }
-    }
-  }
 `;
 
 Widget.Header = styled.header`
@@ -123,6 +79,24 @@ Widget.Content = styled.div`
     li + li {
       margin-top: 8px;
     }
+  }
+`;
+
+Widget.Topic = styled.a`
+  outline: 0;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.contrastText};
+  background-color: ${({ theme }) => `${theme.colors.primary}40`};
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  cursor: pointer;
+  border-radius: ${({ theme }) => theme.borderRadius};
+  transition: 0.3s;
+  display: block;
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
   }
 `;
 
