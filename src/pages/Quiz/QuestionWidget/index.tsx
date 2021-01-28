@@ -29,7 +29,7 @@ export default function QuestionWidget({
   function handleSubmit(event: FormEvent) {
     event.preventDefault();
     setIsQuestionSubmited(true);
-    setInterval(() => {
+    setTimeout(() => {
       addResult(isCorrect);
       onSubmit();
       setIsQuestionSubmited(false);
