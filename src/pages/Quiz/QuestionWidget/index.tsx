@@ -3,6 +3,8 @@ import { questions } from '../../../../db.json';
 import Button from '../../../components/Button';
 import Form from '../../../components/Form';
 import Widget from '../../../components/Widget';
+import CheckCircle from '../../../components/CheckCircle';
+import TimesCircle from '../../../components/TimesCircle';
 
 type Question = typeof questions[0];
 
@@ -82,8 +84,8 @@ export default function QuestionWidget({
             Confirmar
           </Button>
 
-          {isQuestionSubmited && isCorrect && <p>vc Acertou :)</p>}
-          {isQuestionSubmited && !isCorrect && <p>Voce Errou!</p>}
+          {isQuestionSubmited && isCorrect && <CheckCircle />}
+          {isQuestionSubmited && !isCorrect && <TimesCircle />}
         </Form>
       </Widget.Content>
     </Widget>
