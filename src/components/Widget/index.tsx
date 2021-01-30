@@ -100,4 +100,29 @@ Widget.Topic = styled.a`
   }
 `;
 
+Widget.List = styled.ul`
+  height: 235px;
+  border: 1px solid ${({ theme }) => theme.colors.primary};
+  border-radius: ${({ theme }) => theme.borderRadius};
+  padding: 5px !important;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    width: 15px;
+    border-radius: ${({ theme }) => theme.borderRadius};
+  }
+
+  ::-webkit-scrollbar-track {
+    background-color: ${({ theme }) => theme.colors.mainBg};
+    border-radius: ${({ theme }) => theme.borderRadius};
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: rgba(63, 81, 181, 0.5);
+    border: 5px solid ${({ theme }) => theme.colors.mainBg};
+    border-radius: ${({ theme }) => theme.borderRadius};
+  }
+`;
+
 export default Widget;
