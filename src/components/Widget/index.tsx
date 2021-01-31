@@ -99,7 +99,27 @@ Widget.Topic = styled.a`
     opacity: 0.5;
   }
 `;
+Widget.LinkContainer = styled.div`
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
 
+  margin-top: 16px;
+`;
+Widget.Link = styled(Link)`
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 14px;
+  text-align: center;
+  font-weight: 400;
+  color: rgba(63, 81, 181, 0.9);
+
+  &:hover,
+  &:focus {
+    opacity: 0.5;
+  }
+`;
 Widget.List = styled.ul`
   height: 235px;
   border: 1px solid ${({ theme }) => theme.colors.primary};
