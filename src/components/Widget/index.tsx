@@ -125,4 +125,54 @@ Widget.List = styled.ul`
   }
 `;
 
+Widget.ListItem = styled.li`
+  justify-content: space-between;
+  padding: 0 10px !important;
+`;
+
+Widget.Col = styled.div`
+  height: 32px;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    border: 1px solid #000;
+    font-size: 14px;
+    margin-bottom: 0;
+    line-height: 0 !important;
+  }
+  p {
+    font-size: 12px;
+    border: 1px solid #000;
+    line-height: 0 !important;
+    font-weight: 700 !important;
+  }
+`;
+
+Widget.Row = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  h1 {
+    font-size: 14px;
+    margin: 10px;
+    text-align: center;
+    font-weight: 400;
+  }
+`;
+
+Widget.Bubble = styled.div<{ bgColor?: string }>`
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background-color: ${({ bgColor }) => bgColor || '#777'};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
 export default Widget;
