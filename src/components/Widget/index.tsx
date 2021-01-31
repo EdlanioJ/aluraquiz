@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Link from '../Link';
 
 const Widget: any = styled.div`
   margin-top: 24px;
@@ -139,7 +140,7 @@ Widget.List = styled.ul`
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(63, 81, 181, 0.5);
+    background-color: rgba(63, 81, 181, 0.7);
     border: 5px solid ${({ theme }) => theme.colors.mainBg};
     border-radius: ${({ theme }) => theme.borderRadius};
   }
