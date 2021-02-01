@@ -33,6 +33,8 @@ const QuizPage: React.FC<QuizPageProps> = ({
   const [results, setResults] = useState<boolean[]>([]);
   const [screenState, setScreenState] = useState(screenStates.LOADING);
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [InitialTime, setInitialTime] = useState(0);
+  const [finalTime, setFinalTime] = useState(0);
   const question = questions[currentQuestion];
 
   function addResult(result: boolean) {
@@ -42,6 +44,7 @@ const QuizPage: React.FC<QuizPageProps> = ({
   useEffect(() => {
     setTimeout(() => {
       setScreenState(screenStates.QUIZ);
+      setInitialTime(Number(new Date()));
     }, 1 * 1000);
   }, []);
 
@@ -50,6 +53,7 @@ const QuizPage: React.FC<QuizPageProps> = ({
     if (nextQuestion < totalQuestions) {
       setCurrentQuestion(nextQuestion);
     } else {
+      setFinalTime(Number(new Date()));
       setScreenState(screenStates.RESULT);
     }
   }
@@ -69,7 +73,11 @@ const QuizPage: React.FC<QuizPageProps> = ({
         )}
         {screenState === screenStates.LOADING && <LoadingWidget />}
         {screenState === screenStates.RESULT && (
-          <ResultWidget results={results} name={playerName} />
+          <ResultWidget
+            results={results}
+            name={playerName}
+            time={finalTime - InitialTime}
+          />
         )}
         <Footer />
       </QuizContainer>
