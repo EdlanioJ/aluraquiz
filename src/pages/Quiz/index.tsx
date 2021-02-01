@@ -1,4 +1,3 @@
-import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import db from '../../../db.json';
 import Footer from '../../components/Footer';
@@ -15,6 +14,7 @@ interface QuizPageProps {
   questions: QuestionType[];
   bg: string;
   githubRepository: string;
+  playerName?: string;
 }
 
 const screenStates = {
@@ -27,23 +27,17 @@ const QuizPage: React.FC<QuizPageProps> = ({
   questions,
   bg,
   githubRepository,
+  playerName,
 }) => {
   const totalQuestions = questions.length;
   const [results, setResults] = useState<boolean[]>([]);
   const [screenState, setScreenState] = useState(screenStates.LOADING);
-  const [nameQuiz, setNameQuiz] = useState('');
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const question = questions[currentQuestion];
-  const router = useRouter();
 
   function addResult(result: boolean) {
     setResults([...results, result]);
   }
-  useEffect(() => {
-    const { name } = router.query;
-
-    setNameQuiz(name as string);
-  }, []);
 
   useEffect(() => {
     setTimeout(() => {
@@ -75,7 +69,7 @@ const QuizPage: React.FC<QuizPageProps> = ({
         )}
         {screenState === screenStates.LOADING && <LoadingWidget />}
         {screenState === screenStates.RESULT && (
-          <ResultWidget results={results} name={nameQuiz} />
+          <ResultWidget results={results} name={playerName} />
         )}
         <Footer />
       </QuizContainer>
