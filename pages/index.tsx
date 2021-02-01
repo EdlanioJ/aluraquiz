@@ -1,4 +1,3 @@
-import styled from 'styled-components';
 import React, { FormEvent, useEffect, useState } from 'react';
 import axios from 'axios';
 import { useRouter } from 'next/router';
@@ -12,17 +11,8 @@ import { Repository } from './api/related';
 import QuizLogo from '../src/components/QuizLogo';
 import Input from '../src/components/Input';
 import Button from '../src/components/Button';
-
-export const QuizContainer = styled.div`
-  width: 100%;
-  max-width: 350px;
-  padding-top: 45px;
-  margin: auto 10%;
-  @media screen and (max-width: 500px) {
-    margin: auto;
-    padding: 15px;
-  }
-`;
+import Link from '../src/components/Link';
+import QuizContainer from '../src/components/QuizContainer';
 
 export default function Home() {
   const [name, setName] = useState('');
@@ -62,8 +52,8 @@ export default function Home() {
             <h1>{db.title}</h1>
           </Widget.Header>
           <Widget.Content>
-            {db.description.split('. ').map((desc) => (
-              <p>{desc}.</p>
+            {db.description.split('. ').map((desc, key) => (
+              <p key={key.toString()}>{desc}.</p>
             ))}
             <form onSubmit={handleSubmit}>
               <Input
@@ -90,13 +80,16 @@ export default function Home() {
               React fez:
             </p>
             <ul>
-              {repositories.map((repo) => (
-                <li key={repo.id}>
-                  <a href={repo.url} rel="noreferrer" target="_blank">
-                    <span>{repo.fullName}</span>
-                  </a>
-                </li>
-              ))}
+              {repositories.map((repo) => {
+                const [githubName, githubRepository] = repo.fullName.split('/');
+                return (
+                  <li key={repo.id}>
+                    <Link href={`/quiz/${githubName}___${githubRepository}`}>
+                      <span>{repo.fullName}</span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </Widget.Content>
         </Widget>
