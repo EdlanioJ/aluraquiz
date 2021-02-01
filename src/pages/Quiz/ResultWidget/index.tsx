@@ -52,7 +52,7 @@ const ResultWidget: NextPage<ResultWidgetProps> = ({ results, name, time }) => {
       <Widget.Content>
         <p>Mandou bem, {name}</p>
         <h1>
-          Você fez {results.filter((value) => value).length * 10} pontos,
+          Você fez {results.filter((value) => value).length * 100} pontos,
           parabéns!
         </h1>
 
